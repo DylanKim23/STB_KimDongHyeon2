@@ -43,7 +43,7 @@ barplot(entry, legend = TRUE)
 pie(table(X2023_STB_survey $Grade))
 
 
-# 9 Step : 히스토그램
+# 9 Step : 히스토그램1
 
 hist(X2023_STB_survey$`Age`, main="히스토그램", col=terrain.colors(12))
 
