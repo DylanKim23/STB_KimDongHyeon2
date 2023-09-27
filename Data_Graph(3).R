@@ -52,14 +52,14 @@ hist(X2023_STB_survey$`Age`, main="히스토그램", col=terrain.colors(12))
 
 boxplot(X2023_STB_survey$`Grade`, X2023_STB_survey$`Age`, main="BoxPlot Comparison", col="yellow", names = c("Grade","Age"))
 
-> summary(X2023_STB_survey, na.rm=T)
-Gender         Age            Grade        Nationality    residential area
-Min.   :1.0   Min.   :19.00   Min.   :2.000   Min.   :3.000   Min.   : 6.000  
-1st Qu.:1.0   1st Qu.:21.00   1st Qu.:2.000   1st Qu.:3.000   1st Qu.: 6.000  
-Median :1.5   Median :22.00   Median :3.000   Median :3.000   Median : 6.000  
-Mean   :1.5   Mean   :22.52   Mean   :3.125   Mean   :3.438   Mean   : 6.479  
-3rd Qu.:2.0   3rd Qu.:23.25   3rd Qu.:4.000   3rd Qu.:4.000   3rd Qu.: 6.000  
-Max.   :2.0   Max.   :27.00   Max.   :4.000   Max.   :5.000   Max.   :11.000  
+#summary(X2023_STB_survey, na.rm=T)
+#Gender         Age            Grade        Nationality    residential area
+#Min.   :1.0   Min.   :19.00   Min.   :2.000   Min.   :3.000   Min.   : 6.000  
+#1st Qu.:1.0   1st Qu.:21.00   1st Qu.:2.000   1st Qu.:3.000   1st Qu.: 6.000  
+#Median :1.5   Median :22.00   Median :3.000   Median :3.000   Median : 6.000  
+#Mean   :1.5   Mean   :22.52   Mean   :3.125   Mean   :3.438   Mean   : 6.479  
+#3rd Qu.:2.0   3rd Qu.:23.25   3rd Qu.:4.000   3rd Qu.:4.000   3rd Qu.: 6.000  
+#Max.   :2.0   Max.   :27.00   Max.   :4.000   Max.   :5.000   Max.   :11.000  
 
 # 11 Step : Scatter Plot
 plot(x=X2023_STB_survey$`Grade`, y=X2023_STB_survey$`Age`, xlab="Grade값", ylab="Age값", main="산점도")
