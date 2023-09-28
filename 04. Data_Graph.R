@@ -8,6 +8,9 @@ table(KOTRA2023 $진출대륙명, KOTRA2023 $진출형태)
 ECN <- table(KOTRA2023 $진출대륙명)
 prop.table(ECN)
 
+
+a <- table(X2023_STB_survey$Gender $Gender)
+prop.table(a)
 #막대그래프
 barplot(table(KOTRA2023 $진출대륙명))
 
@@ -21,3 +24,10 @@ pie(table(KOTRA2023 $투자형태))
 
 colors <-c("red", "orange", "yellow", "green", "blue")
 pie(table(KOTRA2023 $투자형태), col=colors, main="해외진출기업의투자형태")
+
+
+# @@@@@@@@@@@@@@@
+  
+barplot(table(X2023_STB_survey $Gender, X2023_STB_survey $Grade))
+entry <- table(X2023_STB_survey $Gender, X2023_STB_survey $Grade)
+barplot(entry, legend = TRUE)
