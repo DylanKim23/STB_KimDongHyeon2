@@ -29,10 +29,7 @@ barplot(table(X2023_STB_survey $'residential area'),col=pal1, xlab= "지역", yl
 
 # 7 Step : 막대그래프 (Gender와 Grade) 
 
-barplot(table(X2023_STB_survey $Gender))
-
-entry <- table(X2023_STB_survey $Gender, X2023_STB_survey $Grade)
-barplot(entry, legend = TRUE)
+barplot(table(X2023_STB_survey$Gender, X2023_STB_survey$Grade), legend = TRUE)
 
 
 # 8 Step : 파이차트 (Grade)
