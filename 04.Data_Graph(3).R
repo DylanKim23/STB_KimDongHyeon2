@@ -38,7 +38,7 @@ pie(table(X2023_STB_survey $Grade))
 
 # 9 Step : 히스토그램1
 
-hist(X2023_STB_survey$`Age`, main="Frequency Distribution of Respondents' Ages", col=terrain.colors(12))
+hist(X2023_STB_survey$`Age`, main="Frequency Distribution of Respondents' Age", col=terrain.colors(12))
 
 # 10 Step : BoxPlot Comparison, 기술통계
 
