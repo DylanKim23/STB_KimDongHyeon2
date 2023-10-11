@@ -15,6 +15,8 @@ install_mecab("C:/Rlibs/mecab")
 library(RmecabKo)
 
 #뉴스 API 설정(Client_ID와 Client_Secret은 개인별로 추가)
+
+#searchUrl <-https://openapi.naver.com/v1/search/news.xml # 뉴스
 searchUrl <- "https://openapi.naver.com/v1/search/blog.xml"
 Client_ID <- "GWhxFjCnhGAcLE9dJoQd"
 Client_Secret <- "GciNVDxezW"
