@@ -71,7 +71,7 @@ congestion1$day_mean <- rowMeans(congestion1[,c('s0530','s0600','s0630','s0700',
 # 세부과제2 시작 !!!!
 
 #1.지하철역의 하루 평균 혼잡도
-congestion$day_mean <- rowMeans(congestion[,c('s0530','s0600','s0630','s0700','s0730','s0800','s0830','s0900','s0930','s1000','s1030','s1100','s1130','s1200','s1230','s1300','s1330','s1400','s1430','s1500','s1530','s1600','s1630','s1700','s1730','s1800','s1830','s1900','s1930','s2000','s2030','s2100','s2130','s2200','s2230','s2300','s2330')])
+congestion1$day_mean <- rowMeans(congestion1[,c('s0530','s0600','s0630','s0700','s0730','s0800','s0830','s0900','s0930','s1000','s1030','s1100','s1130','s1200','s1230','s1300','s1330','s1400','s1430','s1500','s1530','s1600','s1630','s1700','s1730','s1800','s1830','s1900','s1930','s2000','s2030','s2100','s2130','s2200','s2230','s2300','s2330')])
 
 #2. 지하철 호선별 하루 평균 혼잡도
 library(dplyr)
@@ -135,7 +135,7 @@ library(dplyr)
 columns_to_compare <- c("day_mean", "s0700", "s0730", "s0800", "s0830", "s0900")
 
 # "congestion" 데이터 프레임을 이용하여 "line" 별로 열들을 비교
-result <- congestion %>%
+result <- congestion1 %>%
   group_by(line, station) %>%
   summarize(across(all_of(columns_to_compare), mean)) %>%
   arrange(desc(day_mean)) %>%
@@ -149,7 +149,7 @@ print(result)
 
 # 4번
 
-congestion %>% 
+congestion1 %>% 
   mutate(s80_grade=ifelse(s0800<=80, "good", ifelse(s0800<=130, "normal", ifelse(s0800<=150, "caution", "bad"))))%>%  
   group_by(line, s80_grade) %>%
   summarise(n=n())%>%  mutate(total=sum(n), pct=round(n/total*100,1))%>%  
@@ -158,18 +158,18 @@ congestion %>%
 
 
 # 5번 
-s1800_mean <- congestion %>% summarise(s1800_mean = mean(s1800, na.rm = TRUE))
-s1830_mean <- congestion %>% summarise(s1830_mean = mean(s1830, na.rm = TRUE))
-s1900_mean <- congestion %>% summarise(s1900_mean = mean(s1900, na.rm = TRUE))
-s1930_mean <- congestion %>% summarise(s1930_mean = mean(s1930, na.rm = TRUE))
-s2000_mean <- congestion %>% summarise(s2000_mean = mean(s2000, na.rm = TRUE))
+s1800_mean <- congestion1 %>% summarise(s1800_mean = mean(s1800, na.rm = TRUE))
+s1830_mean <- congestion1 %>% summarise(s1830_mean = mean(s1830, na.rm = TRUE))
+s1900_mean <- congestion1 %>% summarise(s1900_mean = mean(s1900, na.rm = TRUE))
+s1930_mean <- congestion1 %>% summarise(s1930_mean = mean(s1930, na.rm = TRUE))
+s2000_mean <- congestion1 %>% summarise(s2000_mean = mean(s2000, na.rm = TRUE))
 
 total_mean1 <- (s1800_mean$s1800_mean + s1830_mean$s1830_mean + s1900_mean$s1900_mean + s1930_mean$s1930_mean + s2000_mean$s2000_mean) / 5
 
 total_mean1
 
 #5-1 번 
-a2 <- c(congestion$s1800, congestion$s1830, congestion$s1900, congestion$s1930, congestion$s2000)
+a2 <- c(congestion1$s1800, congestion1$s1830, congestion1$s1900, congestion1$s1930, congestion1$s2000)
 
 summary(a2, na.rm = TRUE)
 
@@ -189,7 +189,7 @@ library(dplyr)
 columns_to_compare <- c("day_mean", "s1800", "s1830", "s1900", "s1930", "s2000")
 
 # "congestion" 데이터 프레임을 이용하여 "line" 별로 열들을 비교
-result <- congestion %>%
+result <- congestion1 %>%
   group_by(line, station) %>%
   summarize(across(all_of(columns_to_compare), mean)) %>%
   arrange(desc(day_mean)) %>%
@@ -198,7 +198,7 @@ print(result)
 
 
 # 6번 
-congestion %>% 
+congestion1 %>% 
   mutate(s80_grade=ifelse(s0800<=80, "good", ifelse(s0800<=130, "normal", ifelse(s0800<=150, "caution", "bad"))))%>%  
   group_by(line, s80_grade) %>%
   summarise(n=n())%>%  mutate(total=sum(n), pct=round(n/total*100,1))%>%  
