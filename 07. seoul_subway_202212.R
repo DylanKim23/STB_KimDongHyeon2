@@ -1,4 +1,4 @@
-# 07. seoul_subway_202212.R
+# 07. seoul_subway_202212.R       # ddd
 
 install.packages("dplyr")
 install.packages("ggplot2")
@@ -264,7 +264,7 @@ ggplot(data = line_graph, aes(x=day, y=s, group=1))+
 # 위에 출력시 선그래프 나옴
 
 
-
+ 
 
 
 
